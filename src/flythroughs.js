@@ -2,7 +2,7 @@
  * Fly-through clips in the Scenes gallery, one per scene.
  *
  * Each clip is a final take from nfinite-video's `flythrough` material
- * (`<video data>/flythrough/<stem>/takes/<take>/video.mp4` on Rohan), re-encoded at 720 px into
+ * (`flythrough/<stem>/takes/<take>/video.mp4` under its data root), re-encoded at 720 px into
  * `public/media/fly/<stem>.mp4` with a poster frame `<stem>.jpg`.
  */
 const HOUSEHOLD = [
