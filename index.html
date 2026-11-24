@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physicl Scenes</title>
+  <link rel="icon" href="data:,">
+  <meta name="description" content="Physicl Scenes: an artist-created 3D dataset of 6,499 scenes for learning perception and action.">
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="topbar-inner" aria-label="Sections">
+      <a class="brand" href="#overview">Physicl Scenes</a>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <!-- <li><a href="#explore">Explore</a></li> -->
+        <li><a href="#scenes">Scenes</a></li>
+        <li><a href="#robots">Manipulation</a></li>
+        <li><a href="#assets">Assets</a></li>
+        <li><a href="#lighting">Lighting</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#bibtex">BibTeX</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="overview" class="hero">
+      <div class="narrow hero-head">
+        <h1>Physicl Scenes</h1>
+        <p class="subtitle">An Artist-created 3D Dataset for Learning Perception and Action</p>
+        <p class="authors">
+          <span>Yueh-Cheng Liu</span>
+          <span>Snehal Jauhri</span>
+          <span>Matthias Nießner</span>
+          <span>Angela Dai</span>
+        </p>
+        <p class="affiliation">Technical University of Munich</p>
+        <div class="links">
+          <a class="button" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+            Paper
+          </a>
+          <a class="button" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m10 9 5 3-5 3z"/></svg>
+            Video
+          </a>
+          <a class="button" href="#data">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            Dataset
+          </a>
+        </div>
+      </div>
+
+      <figure class="wide teaser">
+        <div class="teaser-frame">
+          <span class="teaser-pending">Teaser video coming soon</span>
+        </div>
+        <figcaption>
+          6.5K artist-created indoor and outdoor scenes with full PBR textures, part annotations,
+          and simulation-ready assets, for perception and embodied AI research.
+        </figcaption>
+      </figure>
+
+      <ul class="wide features">
+        <li>
+          <span class="figure">6,499</span>
+          <span class="label">scenes</span>
+          <p>4,999 household rooms, 1,300 public interiors and 200 outdoor spaces.</p>
+        </li>
+        <li>
+          <span class="figure">115K</span>
+          <span class="label">assets</span>
+          <p>Across 1.6K categories, in over 560K instances.</p>
+        </li>
+        <li>
+          <span class="figure">Artist-created</span>
+          <p>Every asset and scene is modeled by professional 3D artists. Nothing is procedurally generated.</p>
+        </li>
+        <li>
+          <span class="figure">Full PBR</span>
+          <p>Albedo, roughness and metallic textures with explicit light emitters.</p>
+        </li>
+        <li>
+          <span class="figure">Part annotations</span>
+          <p>Object- and part-level semantics.</p>
+        </li>
+        <li>
+          <span class="figure">Simulation-ready</span>
+          <p>Metric scale, collision hulls, and mass and inertia derived from part materials.</p>
+        </li>
+      </ul>
+
+      <div class="wide abstract">
+        <h2>Abstract</h2>
+        <p>
+          We present Physicl Scenes, a high-quality artist-created and curated dataset of 6,499 3D scenes spanning
+          household rooms, public interiors, and outdoor spaces. The dataset combines detailed geometry, physically
+          based materials, and carefully composed environments with object- and part-level semantic annotations,
+          providing rich, joint supervision for visual and embodied learning. We demonstrate its value as training
+          data across inverse rendering, 3D reconstruction, scene understanding, and mobile manipulation. Across these
+          tasks, training state-of-the-art methods with our scenes improves performance over alternative synthetic
+          datasets. In addition, we introduce a mobile manipulation benchmark, evaluating vision-language-action
+          models performing physical pick and place in diverse 3D scenes with realistic layouts, and using our part
+          annotations to also score where each object is grasped. Our dataset will be released publicly to facilitate
+          research in visual and embodied AI.
+        </p>
+      </div>
+    </section>
+
+    <!--
+    <section id="explore">
+      <div class="wide section-head">
+        <div>
+          <h2>Explore</h2>
+          <p class="lead">Walk through a few of the scenes in your browser, from inside or from above.</p>
+        </div>
+        <div class="segmented view-switch" role="group" aria-label="View">
+          <button type="button" data-view="inside" aria-pressed="true">Inside</button>
+          <button type="button" data-view="top" aria-pressed="false">Top-down</button>
+        </div>
+      </div>
+      <div class="wide viewer">
+        <div class="viewer-scenes" role="group" aria-label="Scene"></div>
+        <div class="viewer-stage">
+          <p class="viewer-status" hidden></p>
+        </div>
+        <p class="viewer-hint">
+          <span class="viewer-hint-controls"
+            data-inside="Drag to look around. Right-drag or shift-drag to move sideways. Scroll to walk toward the cursor."
+            data-top="Drag to orbit. Right-drag or shift-drag to pan. Scroll to zoom.">Drag to look around. Right-drag or shift-drag to move sideways. Scroll to walk toward the cursor.</span>
+          The scenes are reduced for the web: textures at 512 px and half the triangles.
+        </p>
+      </div>
+    </section>
+    -->
+
+    <section id="scenes">
+      <div class="wide">
+        <h2>Diverse scene types</h2>
+        <p class="lead">Household rooms, public venues and outdoor spaces, each with a realistic layout, high-fidelity assets and rich lighting.</p>
+      </div>
+      <div class="wide gallery">
+        <div class="gallery-filters" role="group" aria-label="Scene type"></div>
+        <div class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section id="robots">
+      <div class="wide section-head">
+        <div>
+          <h2>Mobile manipulation</h2>
+          <p class="lead">Ground-truth mobile pick-and-place demonstrations for robot learning.</p>
+        </div>
+        <div class="carousel-controls">
+          <button class="icon-button" type="button" data-step="-1" aria-label="Previous videos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+          </button>
+          <button class="icon-button" type="button" data-step="1" aria-label="Next videos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="wide">
+        <div class="carousel" aria-roledescription="carousel">
+          <div class="carousel-track">
+          <figure class="carousel-card">
+            <video src="/media/robots/livingroom-414-fixed.mp4" poster="/media/robots/livingroom-414-fixed.jpg" muted loop playsinline preload="none"></video>
+            <figcaption><span class="scene-label">Living room</span>Go pick up the ceramic loop vase, then place it on the marble top coffee table.</figcaption>
+          </figure>
+          <figure class="carousel-card">
+            <video src="/media/robots/teashop-664-fixed.mp4" poster="/media/robots/teashop-664-fixed.jpg" muted loop playsinline preload="none"></video>
+            <figcaption><span class="scene-label">Tea shop</span>Pick up the ceramic coffee cup and saucer and put it on the round pedestal dining table.</figcaption>
+          </figure>
+          <figure class="carousel-card">
+            <video src="/media/robots/laundry-7973-follow.mp4" poster="/media/robots/laundry-7973-follow.jpg" muted loop playsinline preload="none"></video>
+            <figcaption><span class="scene-label">Laundry room</span>Go pick up the electric clothes iron, then place it on the wood bathroom vanity.</figcaption>
+          </figure>
+          <figure class="carousel-card">
+            <video src="/media/robots/events-1285-follow.mp4" poster="/media/robots/events-1285-follow.jpg" muted loop playsinline preload="none"></video>
+            <figcaption><span class="scene-label">Events room</span>Put the plastic pencil cup set on the wood bar counter.</figcaption>
+          </figure>
+          <figure class="carousel-card">
+            <video src="/media/robots/entrance-7919-follow.mp4" poster="/media/robots/entrance-7919-follow.jpg" muted loop playsinline preload="none"></video>
+            <figcaption><span class="scene-label">Entrance</span>Take the black platform combat boot and set it down on the wooden console table.</figcaption>
+          </figure>
+          <figure class="carousel-card">
+            <video src="/media/robots/lobby-1203-fixed.mp4" poster="/media/robots/lobby-1203-fixed.jpg" muted loop playsinline preload="none"></video>
+            <figcaption><span class="scene-label">Lobby</span>Move the metal mesh pencil cup to the solid wood coffee table.</figcaption>
+          </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="assets">
+      <div class="wide section-head">
+        <div>
+          <h2>High-fidelity assets</h2>
+          <p class="lead">Every asset is modeled by an artist and annotated with its parts.</p>
+        </div>
+        <div class="segmented asset-switch" role="group" aria-label="Asset view">
+          <button type="button" data-asset-view="original" aria-pressed="true">Original</button>
+          <button type="button" data-asset-view="parts" aria-pressed="false">Parts</button>
+        </div>
+      </div>
+      <div class="wide">
+        <div class="asset-grid"></div>
+      </div>
+    </section>
+
+    <section id="lighting">
+      <div class="wide">
+        <h2>Controllable Lighting and Full PBR Texture</h2>
+        <p class="lead">Every scene places its own light sources over full PBR materials, so the same room renders at any time of day with any lamps on.</p>
+      </div>
+      <div class="wide lighting">
+        <div class="lighting-bar">
+          <div class="segmented lighting-times" role="group" aria-label="Time of day"></div>
+          <div class="lighting-groups" role="group" aria-label="Lamps"></div>
+        </div>
+        <div class="lighting-stage">
+          <img class="lighting-still" alt="" width="1920" height="1080">
+        </div>
+      </div>
+    </section>
+
+    <section id="data">
+      <div class="wide">
+        <h2>Data</h2>
+        <p class="lead">Coming soon.</p>
+      </div>
+    </section>
+
+    <section id="bibtex">
+      <div class="wide">
+        <h2>BibTeX</h2>
+        <div class="bibtex">
+          <button class="copy" type="button">Copy</button>
+<pre><code>@article{liu2026physiclscenes,
+  title   = {Physicl Scenes: An Artist-created 3D Dataset for Learning Perception and Action},
+  author  = {Liu, Yueh-Cheng and Jauhri, Snehal and Nie{\ss}ner, Matthias and Dai, Angela},
+  journal = {arXiv preprint},
+  year    = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wide">The scenes were created by the artists of <a href="https://www.physicl.ai/">Physicl</a>.</div>
+  </footer>
+</body>
+</html>
