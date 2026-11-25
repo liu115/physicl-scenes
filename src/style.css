@@ -158,26 +158,20 @@ h1 {
   stroke-linejoin: round;
 }
 
-.teaser { margin-top: 48px; margin-bottom: 0; }
-
-.teaser-frame {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  overflow: hidden;
+.teaser {
+  --teaser-width: 880px;
+  max-width: calc(var(--teaser-width) + 2 * var(--gutter));
+  margin-top: 48px;
+  margin-bottom: 0;
 }
 
-.teaser-frame video {
+.teaser video {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
   background: var(--media-bg);
+  border-radius: 6px;
 }
-
-.teaser-pending { color: var(--muted); font-size: 15px; }
 
 figcaption {
   margin: 14px 0 0;
